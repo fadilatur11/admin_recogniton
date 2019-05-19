@@ -1,0 +1,486 @@
+
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="images/favicon.png">
+    <title>Jazy - eCommerce Mobile Template</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="css/materialize.css">
+    <link rel="stylesheet" href="css/loaders.css">
+    <link rel="stylesheet" href="css/line-awesome.css">
+    <link rel="stylesheet" href="css/line-awesome-font-awesome.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="alternate stylesheet" type="text/css" href="css/style-dark.css" title="dark-mode">
+    <link rel="stylesheet" type="text/css" href="css/style.css" title="default">
+
+</head>
+
+<body>
+
+    <!-- preloader -->
+    <div class="preloader">
+        <div class="spinner"></div>
+    </div>
+    <!-- end preloader -->
+
+    <!-- navbar -->
+    <div class="navbar">
+        <div class="container">
+            <div class="row">
+                <div class="col s6">
+                    <div class="content-left">
+                        <a href="#slide-out" data-activates="slide-out" class="sidebar"><i class="fa fa-bars"></i></a>
+                        <a href="index.html"><h1>JAZY</h1></a>
+                    </div>
+                </div>
+                <div class="col s6">
+                    <div class="content-right">
+                        <a href="#slide-out-right" data-activates="slide-out-right" class="sidebar-search"><i class="fa fa-search"></i></a>
+                        <a href="#slide-out-cart" data-activates="slide-out-cart" class="sidebar-cart">
+                            <i class="fa fa-shopping-cart"></i>
+                            <sup>3</sup>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end navbar -->
+
+    <!-- sidebar -->
+    <div class="sidebar-panel">
+        <ul id="slide-out" class="collapsible side-nav">
+            <li>
+                <div class="user-view">
+                    <div class="background">
+                        <img src="images/blog3.jpg" alt="">
+                    </div>
+                    <img class="circle responsive-img" src="images/profile.png" alt="">
+                    <span class="white-text name">John Roe</span>
+                </div>
+            </li>
+            <li>
+                <ul class="tabs">
+                    <li class="tab tab-light">
+                        <a href="#light" onclick="setActiveStyleSheet('default'); return false;"><i class="fa fa-sun-o"></i>Light</a>
+                    </li>
+                    <li class="tab tab-dark">
+                        <a href="#light" onclick="setActiveStyleSheet('dark-mode'); return false;"><i class="fa fa-adjust"></i>Dark</a>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="index.html"><i class="fa fa-home"></i>Home</a></li>
+            <li>
+                <div class="collapsible-header">
+                    <i class="fa fa-female"></i>Product<span><i class="fa fa-angle-right right"></i></span>
+                </div>
+                <div class="collapsible-body">
+                    <ul>
+                        <li><a href="product.html">Product</a></li>
+                        <li><a href="product-list.html">Product List</a></li>
+                        <li><a href="product-details.html">Product Details</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <div class="collapsible-header">
+                    <i class="fa fa-shopping-cart"></i>Shop Pages<span><i class="fa fa-angle-right right"></i></span>
+                </div>
+                <div class="collapsible-body">
+                    <ul>
+                        <li><a href="cart.html">Cart</a></li>
+                        <li><a href="categories.html">Categories</a></li>
+                        <li><a href="wishlist.html">Wishlist</a></li>
+                        <li><a href="checkout.html">Checkout</a></li>
+                        <li><a href="profile.html">Profile</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <div class="collapsible-header">
+                    <i class="fa fa-rss"></i>Blog<span><i class="fa fa-angle-right right"></i></span>
+                </div>
+                <div class="collapsible-body">
+                    <ul>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="blog-single.html">Blog Single</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <div class="collapsible-header">
+                    <i class="fa fa-file"></i>Pages<span><i class="fa fa-angle-right right"></i></span>
+                </div>
+                <div class="collapsible-body">
+                    <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="page-not-found.html">Page Not Found</a></li>
+                        <li><a href="settings.html">Settings</a></li>
+                        <li><a href="sign-up.html">Sign Up</a></li>
+                        <li><a href="sign-in.html">Sign In</a></li>
+                        <li><a href="team.html">Team</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li><a href="contact.html"><i class="fa fa-envelope-o"></i>Contact Us</a></li>
+            <li><a href="sign-in.html"><i class="fa fa-sign-in"></i>Sign In</a></li>
+            <li><a href="sign-up.html"><i class="fa fa-user-plus"></i>Sign Up</a></li>
+            <li><a href="index.html"><i class="fa fa-share"></i>Log Out</a></li>
+        </ul>
+    </div>
+    <!-- end sidebar -->
+
+    <!-- sidebar -->
+    <div class="sidebar-panel sidebar-right-search">
+        <ul id="slide-out-right" class="collapsible side-nav">
+            <li>
+                <div class="form">
+                    <input type="search">
+                    <button class="button"><i class="fa fa-search"></i></button>
+                </div>
+                <div class="clear"></div>
+            </li>
+            <li>
+                <h5>Popular Search</h5></li>
+            <li><a href="">Football</a></li>
+            <li><a href="">Lemon</a></li>
+            <li><a href="">Canon</a></li>
+            <li><a href="">Laptop</a></li>
+            <li><a href="">Pizza</a></li>
+            <li><a href="">Sport</a></li>
+        </ul>
+    </div>
+    <!-- end sidebar -->
+
+    <!-- sidebar cart -->
+    <div class="sidebar-panel sidebar-right-cart">
+        <div id="slide-out-cart" class="collapsible side-nav">
+            <div class="content">
+                <div class="cart-img">
+                    <img src="images/product1.jpg" alt="">
+                </div>
+                <div class="cart-title">
+                    <a href="">Casual Clothes in a Modern Style</a>
+                    <h5>$28</h5>
+                </div>
+                <div class="cart-remove">
+                    <a href=""><i class="fa fa-remove"></i></a>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="content">
+                <div class="cart-img">
+                    <img src="images/product2.jpg" alt="">
+                </div>
+                <div class="cart-title">
+                    <a href="">Trendy Headband Style in 2018</a>
+                    <h5>$11</h5>
+                </div>
+                <div class="cart-remove">
+                    <a href=""><i class="fa fa-remove"></i></a>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="content">
+                <div class="cart-img">
+                    <img src="images/product3.jpg" alt="">
+                </div>
+                <div class="cart-title">
+                    <a href="">Shoes that Light up When Dark</a>
+                    <h5>$32</h5>
+                </div>
+                <div class="cart-remove">
+                    <a href=""><i class="fa fa-remove"></i></a>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="cart-button">
+                <ul>
+                    <li>
+                        <button class="button"><i class="fa fa-shopping-cart"></i>View Cart</button>
+                    </li>
+                    <li>
+                        <button class="button"><i class="fa fa-send"></i>Checkout</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- end sidebar cart -->
+
+    <!-- slide -->
+    <div class="container">
+        <div class="slide">
+            <div class="slide-show owl-carousel owl-theme">
+                <div class="slide-content first-slide">
+                    <div class="mask2"></div>
+                    <img src="images/slider1.jpg" alt="">
+                    <div class="caption">
+                        <h2>Welcome to Jazy</h2>
+                        <p>Mobile Template</p>
+                        <button class="button">Contact Us</button>
+                    </div>
+                </div>
+                <div class="slide-content second-slide">
+                    <div class="mask2"></div>
+                    <img src="images/slider3.jpg" alt="">
+                    <div class="caption">
+                        <h2>New Fashion Style</h2>
+                        <p>Mobile Template</p>
+                        <button class="button">Shop Now</button>
+                    </div>
+                </div>
+                <div class="slide-content third-slide">
+                    <div class="mask2"></div>
+                    <img src="images/slider2.jpg" alt="">
+                    <div class="caption">
+                        <h2>Comfortable Shoes</h2>
+                        <p>Mobile Template</p>
+                        <button class="button">Shop Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end slide -->
+
+    <!-- category -->
+    <div class="category segments">
+        <div class="container">
+            <div class="row">
+                <div class="col s3">
+                    <div class="content">
+                        <a href="see-more-product.html">
+                            <i class="fa fa-car"></i>
+                            <span>Automotive</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col s3">
+                    <div class="content">
+                        <a href="see-more-product.html">
+                            <i class="fa fa-cutlery"></i>
+                            <span>Food</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col s3">
+                    <div class="content">
+                        <a href="see-more-product.html">
+                            <i class="fa fa-camera-retro"></i>
+                            <span>Camera</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col s3">
+                    <div class="content">
+                        <a href="see-more-product.html">
+                            <i class="fa fa-futbol-o"></i>
+                            <span>sport</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s3">
+                    <div class="content">
+                        <a href="see-more-product.html">
+                            <i class="fa fa-female"></i>
+                            <span>Fashion</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col s3">
+                    <div class="content">
+                        <a href="see-more-product.html">
+                            <i class="fa fa-cubes"></i>
+                            <span>Toy</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col s3">
+                    <div class="content">
+                        <a href="see-more-product.html">
+                            <i class="fa fa-plug"></i>
+                            <span>Electronic</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col s3">
+                    <div class="content">
+                        <a href="see-more-product.html">
+                            <i class="fa fa-lemon-o"></i>
+                            <span>Fruit</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end category -->
+
+    <!-- b-seller -->
+    <div class="b-seller segments">
+        <div class="container">
+            <div class="section-title">
+                <h3>Best Seller</h3>
+            </div>
+            <div class="row">
+                <div class="col s6">
+                    <div class="content">
+                        <div class="image">
+                            <img src="images/product2.jpg" alt="">
+                        </div>
+                        <div class="text">
+                            <a href="product-details.html">
+                                <p>Trendy Headband Style in 2018</p>
+                            </a>
+                            <h5>$11</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s6">
+                    <div class="content">
+                        <div class="image">
+                            <img src="images/product3.jpg" alt="">
+                        </div>
+                        <div class="text">
+                            <a href="product-details.html">
+                                <p>Shoes that Light up When Dark</p>
+                            </a>
+                            <h5>$32</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s6">
+                    <div class="content">
+                        <div class="image">
+                            <img src="images/product4.jpg" alt="">
+                        </div>
+                        <div class="text">
+                            <a href="product-details.html">
+                                <p>Casual Shoes that are Comfortable</p>
+                            </a>
+                            <h5>$19</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s6">
+                    <div class="content">
+                        <div class="image">
+                            <img src="images/product1.jpg" alt="">
+                        </div>
+                        <div class="text">
+                            <a href="product-details.html">
+                                <p>Casual Clothes in a Modern Style</p>
+                            </a>
+                            <h5>$28</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end b-seller -->
+
+    <!-- banner -->
+    <div class="banner">
+        <div class="container-fluid">
+            <div class="content">
+                <a href=""><img src="images/banner.png" alt=""></a>
+            </div>
+        </div>
+    </div>
+    <!-- end banner -->
+
+    <!-- product home -->
+    <div class="product-home segments">
+        <div class="container">
+            <div class="section-title">
+                <h3>Change Your Style</h3>
+            </div>
+            <div class="product-slide owl-carousel owl-theme">
+                <div class="content">
+                    <a href="product-details.html"><img src="images/style1.jpg" alt=""></a>
+                </div>
+                <div class="content">
+                    <a href="product-details.html"><img src="images/style3.jpg" alt=""></a>
+                </div>
+                <div class="content">
+                    <a href="product-details.html"><img src="images/style2.jpg" alt=""></a>
+                </div>
+                <div class="content">
+                    <a href="product-details.html"><img src="images/style4.jpg" alt=""></a>
+                </div>
+            </div>
+            <div class="l-more">
+                <a href="see-more-product.html">
+					See More<i class="fa fa-angle-right"></i>
+				</a>
+            </div>
+        </div>
+    </div>
+    <!-- end product home -->
+
+    <!-- product home -->
+    <div class="product-home p-bottom segments">
+        <div class="container">
+            <div class="section-title">
+                <h3>The Best Accessories</h3>
+            </div>
+            <div class="product-slide-two owl-carousel owl-theme">
+                <div class="content">
+                    <a href="product-details.html"><img src="images/accessories2.jpg" alt=""></a>
+                </div>
+                <div class="content">
+                    <a href="product-details.html"><img src="images/accessories1.jpg" alt=""></a>
+                </div>
+                <div class="content">
+                    <a href="product-details.html"><img src="images/accessories3.jpg" alt=""></a>
+                </div>
+                <div class="content">
+                    <a href="product-details.html"><img src="images/accessories4.jpg" alt=""></a>
+                </div>
+            </div>
+            <div class="l-more">
+                <a href="see-more-product.html">
+					See More<i class="fa fa-angle-right"></i>
+				</a>
+            </div>
+        </div>
+    </div>
+    <!-- end product home -->
+
+    <!-- footer -->
+    <footer>
+        <div class="container">
+            <a href=""><h1>JAZY</h1></a>
+            <ul>
+                <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                <li><a href=""><i class="fa fa-google"></i></a></li>
+                <li><a href=""><i class="fa fa-instagram"></i></a></li>
+            </ul>
+            <p>Copyright © All Right Reserved</p>
+        </div>
+    </footer>
+    <!-- end footer -->
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/materialize.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/styleswitcher.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
