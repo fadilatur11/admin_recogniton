@@ -36,9 +36,9 @@
                            <div class="card ">
 
                                <ul class="list-group list-group-flush">
-                                   <li class="list-group-item"><i class="icon icon-mobile text-primary"></i><strong class="s-12">Phone</strong> <span class="float-right s-12"><?=$getdata['telepon'];?></span></li>
-                                   <li class="list-group-item"><i class="icon icon-mail text-success"></i><strong class="s-12">Email</strong> <span class="float-right s-12"><?=$getdata['telepon'];?></span></li>
-                                   <li class="list-group-item"><i class="icon icon-address-card-o text-warning"></i><strong class="s-12">Address</strong> <span class="float-right s-12"><?=$getdata['alamat'];?></span></li>
+                                   <li class="list-group-item"><i class="icon icon-mobile text-primary"></i><strong class="s-12">Phone</strong> <span class="float-right s-12"><?=$getdata['phone'];?></span></li>
+                                   <li class="list-group-item"><i class="icon icon-mail text-success"></i><strong class="s-12">Email</strong> <span class="float-right s-12"><?=$getdata['phone'];?></span></li>
+                                   <li class="list-group-item"><i class="icon icon-address-card-o text-warning"></i><strong class="s-12">Address</strong> <span class="float-right s-12"><?=$getdata['address'];?></span></li>
                                </ul>
                            </div>
                            

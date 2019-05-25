@@ -25,8 +25,10 @@ class Auth extends CI_Controller
 			if (!empty($akun)) {
 				/*echo "email dan password benar";*/
 				// change status online
-				$online = array('status' => 1);
+				$online = array('status' => 2);
 				$this->Model_t_admin->update($akun['id'],$online);
+				// print_r($this->db->last_query());
+				// die();
 				$session_akun = array(
 					'id' => $akun['id'],
 					'name' => $akun['name'],
@@ -47,7 +49,7 @@ class Auth extends CI_Controller
 
 	function logout()
 	{
-		$online = array('status' => 0);
+		$online = array('status' => 1);
 		$this->Model_t_admin->update($this->session->userdata('id'),$online);
 		$this->session->sess_destroy();
 		redirect('auth/login');

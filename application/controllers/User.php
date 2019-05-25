@@ -34,11 +34,13 @@ class User extends CI_Controller
 		$data = array(
 			'name' => $nama,
 			'email' => $email,
-			'telepon' => $phone,
-			'alamat' => $address,
-			'level' => 0,
-			'photo' => $image_name,
-			'password' => $password);
+			'phone' => $phone,
+			'address' => $address,
+			'image' => $image_name,
+			'password' => $password,
+			'created_at' => date('d-m-Y H:i:s'),
+			'updated_at' => date('d-m-Y H:i:s')
+		);
 
 		$this->Model_t_admin->add($data);
 		echo 'berhasil';
@@ -70,6 +72,34 @@ class User extends CI_Controller
 		$data['page'] = 'Edit User';
 		$data['getdata'] = $this->Model_t_admin->get($id);
 		$this->load->view('user/edit',$data);
+	}
+
+	function editaction($id)
+	{
+		$nama = $this->input->post('nama');
+		$email = $this->input->post('email');
+		$phone = $this->input->post('phone');
+		$address = $this->input->post('alamat');
+		$password = md5($this->input->post('password'));
+
+
+			$image_name =  str_replace(' ','_',date('Ymdhis').$_FILES['webcam']['name']);
+			$config['file_name'] 		= $image_name;
+			
+
+		$data = array(
+			'name' => $nama,
+			'email' => $email,
+			'phone' => $phone,
+			'address' => $address,
+			'image' => $image_name,
+			'password' => $password,
+			'created_at' => date('d-m-Y H:i:s'),
+			'updated_at' => date('d-m-Y H:i:s')
+		);
+
+		$this->Model_t_admin->update($id,$data);
+		echo 'berhasil';
 	}
 
 	function detail($id)

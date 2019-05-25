@@ -25,7 +25,7 @@
 
                                     <div class="form-group col-md-4 m-0">
                                         <label for="phone" class="col-form-label s-12"><i class="icon-phone mr-2"></i>Phone</label>
-                                        <input name="phone" placeholder="08xxxxx" class="form-control r-0 light s-12 " type="number" value="<?=$getdata['telepon'];?>">
+                                        <input name="phone" placeholder="08xxxxx" class="form-control r-0 light s-12 " type="number" value="<?=$getdata['phone'];?>">
                                     </div>
 
                                 </div>
@@ -33,7 +33,7 @@
                                     <div class="form-group col-md-8 m-0">
                                         <label for="address"  class="col-form-label s-12">Address</label>
                                         <input type="text" class="form-control r-0 light s-12" name="alamat" 
-                                               placeholder="Enter Address" value="<?=$getdata['alamat'];?>">
+                                               placeholder="Enter Address" value="<?=$getdata['address'];?>">
                                     </div>
 
                                     <div class="form-group col-md-8 m-0">
@@ -89,7 +89,7 @@
             /*console.log(input);*/
             $.ajax({
                 method: 'POST', // method data yg dikirim
-                url: '<?php echo site_url('user/addaction');?>', // alamat url
+                url: '<?php echo site_url('user/editaction/'.$getdata['id']);?>', // alamat url
                 data: input, // data ini mengacu pada variable yg dibuat, krna variable yg dibuat adalah input, maka di isi variable input
                 success: function(response){
                     console.log('response'); // success:response itu adalah penanda bahwa data berhasil dikirim

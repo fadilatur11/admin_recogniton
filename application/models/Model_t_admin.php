@@ -1,7 +1,7 @@
 <?php
 class Model_t_admin extends CI_Model
 {
-	protected $_table = 't_admin';
+	protected $_table = 'user';
 
 	function add($data)
 	{
@@ -10,7 +10,7 @@ class Model_t_admin extends CI_Model
 
 	function getuser()
 	{
-		$this->db->where('level',0);
+		//$this->db->where('level',0);
 		return $this->db->get($this->_table)->result_array();
 	}
 

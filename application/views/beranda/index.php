@@ -75,10 +75,10 @@
                                 '<td>'+ u + '</td>'+
                                 '<td>'+ getdata[i].name +'</td>' +
                                 '<td>'+ getdata[i].email +'</td>' +
-                                '<td>'+ getdata[i].telepon +'</td>' +
-                                '<td>'+ getdata[i].alamat +'</td>' +
+                                '<td>'+ getdata[i].phone +'</td>' +
+                                '<td>'+ getdata[i].address +'</td>' +
                                 '<td>'+ status +'</td>' +
-                                '<td>'+ level +'</td>' +
+                                '<td>User</td>' +
                                 '<td>'+'<a href="<?php echo site_url('user/delete/');?>'+getdata[i].id+'"><button type="button" class="btn btn-danger">Delete</button></a><br>'+
                                 '<a href="<?php echo site_url('user/edit/');?>'+getdata[i].id+'"><button type="button" class="btn btn-secondary" style="margin-top:1%">Edit</button></a><br>'+
                                 '<a href="<?php echo site_url('user/detail/');?>'+getdata[i].id+'"><button type="button" class="btn btn-success" style="margin-top:1%">Detail</button></a></td>' +
