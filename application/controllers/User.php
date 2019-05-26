@@ -108,4 +108,51 @@ class User extends CI_Controller
 		$data['getdata'] = $this->Model_t_admin->get($id);
 		$this->load->view('user/detail',$data);
 	}
+
+	function search()
+	{
+		$output = '';
+		$query = '';
+		if($this->input->post('query'))
+		{
+			$query = $this->input->post('query');
+		}
+		$data = $this->Model_t_admin->fetch_data($query);
+		$output .= '
+		<ul class="list-unstyled">
+		';
+		if($data->num_rows() > 0)
+		{
+			foreach($data->result() as $row)
+			{
+				$output .= '
+							<a href="'.site_url('user/detail/').''.$row->id.'">
+								<li class="my-1">
+                                    <div class="card no-b p-3">
+                                        <div class="">
+
+                                            <div class="image mr-3  float-left">
+                                                <img class="w-40px" src="http://localhost/admin_recogniton/assets/img/dummy/u1.png" alt="User Image">
+                                            </div>
+                                            <div>
+                                                <div>
+                                                    <strong style="color:#86939e">'.$row->name.'</strong>
+                                                </div>
+                                                <small style="color:#86939e">'.$row->email.'</small>
+                                            </div>
+                                        </div>
+                                    </div>
+								</li>
+							</a>
+				';
+			}
+		}
+		else
+		{
+			$output .= '<div><b>Data tidak ditemukan</b></div>
+						</ul>';
+		}
+		$output .= '</table>';
+		echo $output;
+	}
 }

@@ -44,4 +44,17 @@ class Model_t_admin extends CI_Model
 		$this->db->where('id',$id);
 		return $this->db->get($this->_table)->row_array();
 	}
+
+	function fetch_data($query)
+	{
+		$this->db->from("user");
+		if($query != '')
+		{
+			$this->db->like('name', $query);
+			$this->db->or_like('email', $query);
+			$this->db->or_like('username', $query);
+		}
+		$this->db->order_by('created_at', 'DESC');
+		return $this->db->get();
+	}
 }
