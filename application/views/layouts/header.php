@@ -76,14 +76,7 @@ $images = $this->config->item('images');
                     <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab"
                        aria-controls="v-pills-profile" aria-selected="false"><i class="icon-search3"></i></a>
                     <a class="nav-link blink skin_handle"  href="#"><i class="icon-lightbulb_outline"></i></a>
-                    <a class="nav-link" id="v-pills-messages-tab" href="#"><i class="icon-message"></i></a>
-                    <a class="nav-link" id="v-pills-settings-tab" href="#"><i class="icon-settings"></i></a>
-                    <a href="">
-                        <figure class="avatar">
-                            <img src="<?php echo $images;?>dummy/u3.png" alt="">
-                            <span class="avatar-badge online"></span>
-                        </figure>
-                    </a>
+                    
                 </div>
             </div>
             <div class="tab-content flex-grow-1" id="v-pills-tabContent">
@@ -107,6 +100,9 @@ $images = $this->config->item('images');
                                 <li><a href="<?php echo site_url('user/add');?>"><i class="icon icon-add"></i>Daftar</a>
                                 </li>
                             </ul>
+                        </li>
+
+                        <li><a href="<?= site_url('presence');?>"><i class="icon icon-account_box s-24"></i>Daftar Hadir</a>
                         </li>
                         
                     </ul>

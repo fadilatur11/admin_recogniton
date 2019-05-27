@@ -14,6 +14,12 @@ class Model_t_admin extends CI_Model
 		return $this->db->get($this->_table)->result_array();
 	}
 
+	function presence()
+	{
+		$this->db->join('user','present.user_id = user.id');
+		return $this->db->get('present')->result_array();
+	}
+
 	function login($email)
 	{
 		$this->db->where('email',$email);
@@ -42,6 +48,13 @@ class Model_t_admin extends CI_Model
 	function get($id)
 	{
 		$this->db->where('id',$id);
+		return $this->db->get($this->_table)->row_array();
+	}
+
+	function detail($id)
+	{
+		$this->db->join('present','user.id = present.user_id');
+		$this->db->where('user.id',$id);
 		return $this->db->get($this->_table)->row_array();
 	}
 

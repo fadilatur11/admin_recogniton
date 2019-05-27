@@ -105,7 +105,7 @@ class User extends CI_Controller
 	function detail($id)
 	{
 		$data['page'] = "Detail User";
-		$data['getdata'] = $this->Model_t_admin->get($id);
+		$data['getdata'] = $this->Model_t_admin->detail($id);
 		$this->load->view('user/detail',$data);
 	}
 
