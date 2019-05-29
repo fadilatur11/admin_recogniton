@@ -151,9 +151,34 @@ class Auth extends CI_Controller
 			$this->session->set_flashdata('message', 'Silahkan cek email anda untuk mengetahui code konfirmasi');
 			redirect('auth/reset/'.$akun['id']);
 		}else{
-			//echo "email tidak ada";
+			echo "email tidak ada";
 			$this->session->set_flashdata('message', 'Email yang anda masukkan tidak ada');
 		}
+	}
+
+	function testemail()
+	{
+		//Load email library
+		$this->load->library('email');
+		//SMTP & mail configuration
+		$config = array(
+			'protocol'  => 'smtp',
+			'smtp_host' => 'ssl://smtp.gmail.com',
+			'smtp_port' => 465,
+			'smtp_user' => 'fadhilatur7@gmail.com',
+			'smtp_pass' => 'Juventus12',
+			'charset'   => 'utf-8'
+		);
+
+		$this->email->initialize($config);
+		$this->email->set_mailtype('html');
+		$this->email->set_newline("\r\n");
+		$this->email->to('fadil@canisnfelis.com');
+		$this->email->from('fadhilatur7@gmail.com');
+		$this->email->subject('Reset Password');
+		$this->email->message('test');
+		//Send email
+		$this->email->send();
 	}
 
 }
