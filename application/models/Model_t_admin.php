@@ -8,10 +8,21 @@ class Model_t_admin extends CI_Model
 		$this->db->insert($this->_table,$data);
 	}
 
+	function addadmin($data)
+	{
+		$this->db->insert('t_admin',$data);
+	}
+
 	function getuser()
 	{
 		//$this->db->where('level',0);
 		return $this->db->get($this->_table)->result_array();
+	}
+
+	function admin()
+	{
+		//$this->db->where('level',0);
+		return $this->db->get('t_admin')->result_array();
 	}
 
 	function presence()
@@ -26,11 +37,24 @@ class Model_t_admin extends CI_Model
 		return $this->db->get($this->_table)->row_array();
 	}
 
+	function loginakun($email)
+	{
+		$this->db->where('email',$email);
+		return $this->db->get('t_admin')->row_array();
+	}	
+
 	function akun($email,$password)
 	{
 		$this->db->where('email',$email);
 		$this->db->where('password',$password);
 		return $this->db->get($this->_table)->row_array();
+	}
+
+	function getakun($email,$password)
+	{
+		$this->db->where('email',$email);
+		$this->db->where('password',$password);
+		return $this->db->get('t_admin')->row_array();
 	}
 
 	function update($id,$data)
@@ -39,16 +63,34 @@ class Model_t_admin extends CI_Model
 		$this->db->update($this->_table,$data);
 	}
 
+	function updateakun($id,$data)
+	{
+		$this->db->where('id', $id);
+		$this->db->update('t_admin',$data);
+	}
+
 	function delete($id)
 	{
 		$this->db->where('id', $id);
 		$this->db->delete($this->_table);
 	}
 
+	function deleteadmin($id)
+	{
+		$this->db->where('id', $id);
+		$this->db->delete('t_admin');
+	}
+
 	function get($id)
 	{
 		$this->db->where('id',$id);
 		return $this->db->get($this->_table)->row_array();
+	}
+
+	function getadmin($id)
+	{
+		$this->db->where('id',$id);
+		return $this->db->get('t_admin')->row_array();
 	}
 
 	function detail($id)

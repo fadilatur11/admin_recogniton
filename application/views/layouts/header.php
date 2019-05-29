@@ -97,7 +97,11 @@ $images = $this->config->item('images');
                             <ul class="treeview-menu">
                                 <li><a href="<?php echo site_url('beranda');?>"><i class="icon icon-circle-o"></i>Semua User</a>
                                 </li>
-                                <li><a href="<?php echo site_url('user/add');?>"><i class="icon icon-add"></i>Daftar</a>
+                                <li><a href="<?php echo site_url('administrator');?>"><i class="icon icon-circle-o"></i>Semua Administrator</a>
+                                </li>
+                                <li><a href="<?php echo site_url('user/add');?>"><i class="icon icon-add"></i>Daftar User</a>
+                                </li>
+                                <li><a href="<?php echo site_url('administrator/add');?>"><i class="icon icon-add"></i>Daftar Administrator</a>
                                 </li>
                             </ul>
                         </li>

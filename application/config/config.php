@@ -33,6 +33,7 @@ $config['images'] 			= $config['base_url']."assets/img/";
 $config['images_tim'] 		= $config['base_url']."tamtam.php?src=";
 $config['save_face'] = "/Applications/XAMPP/htdocs/admin_recognition/assets/recognition/";
 
+
 /*
 |--------------------------------------------------------------------------
 | Index File
