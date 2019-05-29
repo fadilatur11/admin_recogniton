@@ -179,6 +179,7 @@ class Auth extends CI_Controller
 		$this->email->message('test');
 		//Send email
 		$this->email->send();
+		echo $this->email->print_debugger();
 	}
 
 }
