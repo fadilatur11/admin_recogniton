@@ -18,15 +18,15 @@ class Auth extends CI_Controller
 	{
 		$email = $this->input->post('email');
 		$password = md5($this->input->post('password'));
-		$login = $this->Model_t_admin->login($email);
+		$login = $this->Model_t_admin->loginakun($email);
 		if (!empty($login)) {
 			/*echo "email ada";*/
-			$akun = $this->Model_t_admin->akun($email,$password);
+			$akun = $this->Model_t_admin->getakun($email,$password);
 			if (!empty($akun)) {
 				/*echo "email dan password benar";*/
 				// change status online
 				$online = array('status' => 2);
-				$this->Model_t_admin->update($akun['id'],$online);
+				$this->Model_t_admin->updateakun($akun['id'],$online);
 				// print_r($this->db->last_query());
 				// die();
 				$session_akun = array(
@@ -50,7 +50,7 @@ class Auth extends CI_Controller
 	function logout()
 	{
 		$online = array('status' => 1);
-		$this->Model_t_admin->update($this->session->userdata('id'),$online);
+		$this->Model_t_admin->updateakun($this->session->userdata('id'),$online);
 		$this->session->sess_destroy();
 		redirect('auth/login');
 	}
@@ -103,8 +103,8 @@ class Auth extends CI_Controller
 
 	function reset($id)
 	{
-		$data['akun'] = $this->Model_t_admin->get($id);
-		$akun = $this->Model_t_admin->get($id);
+		$data['akun'] = $this->Model_t_admin->getadmin($id);
+		$akun = $this->Model_t_admin->getadmin($id);
 		$this->kirim_email($akun['email'],$akun['code']); // kirim email konfirmasi
 		$this->load->view('auth/reset',$data);
 	}
@@ -112,7 +112,7 @@ class Auth extends CI_Controller
 	function actionreset($id)
 	{
 		$code = $this->input->post('code');
-		$akun = $this->Model_t_admin->get($id);
+		$akun = $this->Model_t_admin->getadmin($id);
 		if ($akun['code'] == $code) {
 			redirect('auth/newpassword/'.$id);
 		}else{
@@ -123,31 +123,31 @@ class Auth extends CI_Controller
 
 	function newpassword($id)
 	{
-		$data['akun'] = $this->Model_t_admin->get($id);
+		$data['akun'] = $this->Model_t_admin->getadmin($id);
 		$this->load->view('auth/newpassword',$data);
 	}
 	
 	function actionnewpassword($id)
 	{
-		$akun = $this->Model_t_admin->get($id);
+		$akun = $this->Model_t_admin->getadmin($id);
 		$password = md5($this->input->post('password'));
 		$data = array(
 			'password' => $password
 		);
-		$this->Model_t_admin->update($id,$data);
+		$this->Model_t_admin->updateakun($id,$data);
 	}
 	
 
 	function forgetaction()
 	{
 		$email = $this->input->post('email');
-		$akun = $this->Model_t_admin->login($email);
+		$akun = $this->Model_t_admin->loginakun($email);
 		if (!empty($akun)) {
 			//echo 'email ada';
 			$code = array(
 				'email' => $email, 
 				'code' => $this->generator(4)); // data yg akan dibuat code konfirmasi password
-			$this->Model_t_admin->update($akun['id'],$code); // codedikirim berdasarkan email yg di input
+			$this->Model_t_admin->updateakun($akun['id'],$code); // codedikirim berdasarkan email yg di input
 			$this->session->set_flashdata('message', 'Silahkan cek email anda untuk mengetahui code konfirmasi');
 			redirect('auth/reset/'.$akun['id']);
 		}else{

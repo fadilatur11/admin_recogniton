@@ -23,4 +23,10 @@ class Beranda extends CI_Controller
 		$getdata = $this->Model_t_admin->getuser();
 		echo json_encode($getdata);
 	}
+
+	function ambiladmin()
+	{
+		$getdata = $this->Model_t_admin->admin();
+		echo json_encode($getdata);
+	}
 }
