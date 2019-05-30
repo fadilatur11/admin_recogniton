@@ -34,6 +34,11 @@ $config['images_tim'] 		= $config['base_url']."timthumb.php?src=";
 $config['save_face'] = $_SERVER['DOCUMENT_ROOT'].'/upload/face/';
 $config['get_face'] = 'http://localhost/upload/face/';
 
+// FaceAPI Config
+$config['upload']   =   'http://localhost:3000/static/upload/';
+$config['sample']   =   'http://localhost:3000/static/sample_image/';
+$config['show']   =   'http://localhost:3000/static/show/';
+
 
 /*
 |--------------------------------------------------------------------------
