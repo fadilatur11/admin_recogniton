@@ -31,8 +31,10 @@ $config['css'] 				= $config['base_url']."assets/css/";
 $config['js'] 			= $config['base_url']."assets/js/";
 $config['images'] 			= $config['base_url']."assets/img/";
 $config['images_tim'] 		= $config['base_url']."timthumb.php?src=";
-$config['save_face'] = $_SERVER['DOCUMENT_ROOT'].'/upload/face/';
-$config['get_face'] = 'http://localhost/upload/face/';
+// $config['save_face'] = $_SERVER['DOCUMENT_ROOT'].'/upload/face/';
+// $config['get_face'] = 'http://localhost/upload/face/';
+$config['save_face'] = '/home/Workspace/Web/dns/upload/face/';
+$config['get_face'] = 'http://117.53.47.77/dns/upload/face/';
 
 
 /*
