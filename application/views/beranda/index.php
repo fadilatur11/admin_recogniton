@@ -36,8 +36,8 @@
         </div>
     </div>
     <!--Add New Message Fab Button-->
-    <a href="<?php echo site_url('user/add');?>" class="btn-fab btn-fab-md fab-right fab-right-bottom-fixed shadow btn-primary"><i
-            class="icon-add"></i></a>
+    <?php /*<a href="<?php echo site_url('user/add');?>" class="btn-fab btn-fab-md fab-right fab-right-bottom-fixed shadow btn-primary"><i
+            class="icon-add"></i></a>*/ ?>
 </div>
 
 <!-- Add the sidebar's background. This div must be placed
