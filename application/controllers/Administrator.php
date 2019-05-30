@@ -40,8 +40,16 @@ class Administrator extends CI_Controller
 		$password = md5($this->input->post('password'));
 
 
+		if(!empty($_FILES['webcam']['name'])){
 			$image_name =  str_replace(' ','_',date('Ymdhis').$_FILES['webcam']['name']);
+			$config['upload_path'] 		= $this->config->item('save_face');
+			$config['allowed_types'] 	= 'gif|jpg|png|jpeg';
 			$config['file_name'] 		= $image_name;
+			$this->upload->initialize($config);
+			$this->upload->do_upload('webcam');
+		}else{
+			$image_name = $this->input->post('webcam');
+		}
 			
 
 		$data = array(
@@ -56,7 +64,7 @@ class Administrator extends CI_Controller
 		);
 
 		$this->Model_t_admin->updateakun($id,$data);
-		echo 'berhasil';
+		redirect('administrator');
     }
     
     function add()
@@ -74,10 +82,17 @@ class Administrator extends CI_Controller
 		$password = md5($this->input->post('password'));
 
 
+		if(!empty($_FILES['webcam']['name'])){
 			$image_name =  str_replace(' ','_',date('Ymdhis').$_FILES['webcam']['name']);
+			$config['upload_path'] 		= $this->config->item('save_face');
+			$config['allowed_types'] 	= 'gif|jpg|png|jpeg';
 			$config['file_name'] 		= $image_name;
+			$this->upload->initialize($config);
+			$this->upload->do_upload('webcam');
+		}else{
+			$image_name = $this->input->post('webcam');
+		}
 			
-
 		$data = array(
 			'name' => $nama,
 			'email' => $email,
@@ -90,7 +105,8 @@ class Administrator extends CI_Controller
 		);
 
 		$this->Model_t_admin->addadmin($data);
-		echo 'berhasil';
+		//echo 'berhasil';
+		redirect('administrator');
 	}
 
 	function save_snap()

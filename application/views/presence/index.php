@@ -84,7 +84,6 @@
                                 '<td>'+ getdata[i].updated_at+'</td>' +
                                 '<td>User</td>' +
                                 '<td>'+'<a href="<?php echo site_url('user/delete/');?>'+getdata[i].id+'"><button type="button" class="btn btn-danger">Delete</button></a><br>'+
-                                '<a href="<?php echo site_url('user/edit/');?>'+getdata[i].id+'"><button type="button" class="btn btn-secondary" style="margin-top:1%">Edit</button></a><br>'+
                                 '<a href="<?php echo site_url('user/detail/');?>'+getdata[i].id+'"><button type="button" class="btn btn-success" style="margin-top:1%">Detail</button></a></td>' +
                                 '</tr>';
                 }

@@ -3,7 +3,7 @@
         <div class="animated fadeInUpShort">
             <div class="row my-3">
                 <div class="col-md-8 offset-md-2">
-                    <form id="create" autocomplete="off"> <!-- karena ini pake method jquery ajax post maka action g diperlukan -->
+                <form action="<?php echo site_url('administrator/editaction/'.$getdata['id']);?>" autocomplete="off"  method="post" autocomplete="off" enctype="multipart/form-data"> <!-- karena ini pake method jquery ajax post maka action g diperlukan -->
                         <div class="card no-b">
                             <div class="card-body">
                                 <h5 class="card-title">About User</h5>
@@ -38,7 +38,7 @@
 
                                     <div class="form-group col-md-8 m-0">
                                         <label for="address"  class="col-form-label s-12">Password</label>
-                                        <input type="password" class="form-control r-0 light s-12" name="password" 
+                                        <input type="password" required class="form-control r-0 light s-12" name="password" 
                                                placeholder="Enter Password" id="txtPassword">
                                                <input type="checkbox" id="chkShow"/> <label>Show Password</label>
                                     </div>
@@ -47,22 +47,24 @@
                             </div>
 
                             <div class="col-md-3 gentak">
+                            <input type="file" name="webcam" style="margin-bottom: 10px" accept='images/*' onchange='openFile(event);'>
                                 <div class="dropzone dropzone-file-area pt-4 pb-4">
-                                    
-                                        <span id="results">Photo</span>
+                                <img src="<?php echo $tim.$face.$getdata['photo'];?>&w=250&h=200&zc=1">
+                                <input type="hidden" name="webcam" value="<?=$getdata['photo'];?>">
+                                <?php /*<span id="TheImageContents">Photo</span>*/?>
 
                                 </div>
                             </div>
 
-                            <br>
+                            <?php /*<br>
                             <div class="card-body">
                                 <div class="form-group col-md-8 m-0">
                                     <div id="my_camera"></div>
                                     <input type=button value="Take Snapshot" onClick="take_snapshot()" style="margin-top: 1%">
                                 </div>
-                            </div>
+                            </div>*/ ?>
 
-                            <div class="card-body">
+                            <div class="card-body bawah">
                                 <button type="submit" class="btn btn-primary btn-lg"><i class="icon-save mr-2"></i>Save Data</button>
                             </div>
                         </div>
@@ -78,15 +80,15 @@
 <div class="control-sidebar-bg shadow white fixed"></div>
 </div>
 <?php include_once dirname(__FILE__).'/../layouts/footer.php';?>
-<script type="text/javascript" src="<?php echo $js;?>webcam/webcam.min.js"></script>
+<?php /*<script type="text/javascript" src="<?php echo $js;?>webcam/webcam.min.js"></script>*/ ?>
 
 <script type="text/javascript">
-    $(document).ready(function(){ // jquery ajax wajib pake syntax ini
+    <?php /*$(document).ready(function(){ // jquery ajax wajib pake syntax ini
         $('#create').submit(function(event){
             event.preventDefault(); // synatax supaya g loading page
-            /*console.log('oke')*/
+            console.log('oke')
             let input = $(this).serialize(); // serialize ini otomatis mengcrawl inputan dan syntax this itu mengacu pada #tambah
-            /*console.log(input);*/
+            console.log(input);
             $.ajax({
                 method: 'POST', // method data yg dikirim
                 url: '<?php echo site_url('administrator/editaction/'.$getdata['id']);?>', // alamat url
@@ -100,7 +102,7 @@
                 }
             })
         })
-    })
+    })*/?>
 
     $('#chkShow').change(function() {
     var isChecked = $(this).prop('checked');
@@ -112,7 +114,23 @@
     }
 });
 
-Webcam.set({
+// This grabs the file contents when the file changes
+var openFile = function(event) {
+	var input = event.target;
+
+	// Instantiate FileReader
+	var reader = new FileReader();
+	reader.onload = function(){
+		TheFileContents = reader.result;
+		// Update the output to include the <img> tag with the data URL as the source
+		document.getElementById("TheImageContents").innerHTML = '<p><img width="300" height="150" style="border-radius: 5px" src="'+TheFileContents+'" /></p>';
+	};
+	// Produce a data URL (base64 encoded string of the data in the file)
+	// We are retrieving the first file from the FileList object
+	reader.readAsDataURL(input.files[0]);
+};
+
+<?php /*Webcam.set({
             width: 320,
             height: 240,
             image_format: 'jpeg',
@@ -136,6 +154,6 @@ Webcam.set({
   console.log('Save successfully');
   //console.log(text);
  });
-        }
+        }*/?>
 
 </script>

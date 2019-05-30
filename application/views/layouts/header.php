@@ -3,6 +3,7 @@ $css = $this->config->item('css');
 $js = $this->config->item('js');
 $tim = $this->config->item('images_tim');
 $images = $this->config->item('images');
+$face = $this->config->item('get_face');
 ?>
 <!DOCTYPE html>
 <html lang="zxx">
