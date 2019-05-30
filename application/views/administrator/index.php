@@ -11,8 +11,8 @@
                                         <thead>
                                         <tr class="no-b">
                                             <th>NO</th>
+                                            <th>FOTO<th>
                                             <th>NAMA</th>
-
                                             <th> <div class="d-none d-lg-block">EMAIL</div></th>
                                             <th> <div class="d-none d-lg-block">NO HP</div></th>
                                             <th> <div class="d-none d-lg-block">ALAMAT</div></th>
@@ -47,7 +47,7 @@
 <?php include_once dirname(__FILE__).'/../layouts/footer.php';?> 
 <script type="text/javascript">
     getdata();
-    setInterval(getdata, 1000);
+    setInterval(getdata, 1500);
 
     function getdata(){
         $.ajax({
@@ -73,6 +73,7 @@
                     }
                     baris += '<tr>'+
                                 '<td>'+ u + '</td>'+
+                                '<td><img src="<?=$tim.$face;?>'+getdata[i].photo+'" style="border-radius: 100%;"></td>'+
                                 '<td>'+ getdata[i].name +'</td>' +
                                 '<td>'+ getdata[i].email +'</td>' +
                                 '<td>'+ getdata[i].telepon +'</td>' +
