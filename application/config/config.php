@@ -30,8 +30,9 @@ $config['base_url'] = $baseUrl;
 $config['css'] 				= $config['base_url']."assets/css/";
 $config['js'] 			= $config['base_url']."assets/js/";
 $config['images'] 			= $config['base_url']."assets/img/";
-$config['images_tim'] 		= $config['base_url']."tamtam.php?src=";
-$config['save_face'] = "/Applications/XAMPP/htdocs/admin_recognition/assets/recognition/";
+$config['images_tim'] 		= $config['base_url']."timthumb.php?src=";
+$config['save_face'] = $_SERVER['DOCUMENT_ROOT'].'/upload/face/';
+$config['get_face'] = 'http://localhost/upload/face/';
 
 
 /*
@@ -146,6 +147,7 @@ $config['subclass_prefix'] = 'MY_';
 |	autoloading (application/config/autoload.php)
 */
 $config['composer_autoload'] = FALSE;
+//$config['composer_autoload'] = "./vendor/autoload.php";
 
 /*
 |--------------------------------------------------------------------------

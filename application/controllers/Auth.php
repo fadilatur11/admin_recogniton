@@ -49,7 +49,7 @@ class Auth extends CI_Controller
 
 	function logout()
 	{
-		$online = array('status' => 1);
+		$online = array('status' => 0);
 		$this->Model_t_admin->updateakun($this->session->userdata('id'),$online);
 		$this->session->sess_destroy();
 		redirect('auth/login');

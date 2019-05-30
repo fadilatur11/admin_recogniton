@@ -103,54 +103,47 @@ $images = $this->config->item('images');
                     <div class="col-12">
                         <div class="box">
                             <div class="box-header">
-                                <h3 class="box-title">Daftar Hadir Selama 1 Bulan</h3>
+                                <h3 class="box-title">Report Daftar Hadir</h3>
                                 <div class="box-tools">
                                    
                                 </div>
+                            </div><br>
+                            <div class="col-12">
+                            <form action="<?= site_url('pdf');?>" method="POST">
+                            <input type="date" name="start_date">
+                            <input type="date" name="end_date">
+                            <button type="submit" class="btn btn-default">Filter</button>
+                            </form>
+                            <form action="<?= site_url('report/download');?>" method="POST">
+                            <input type="hidden" name="start_date">
+                            <input type="hidden" name="end_date">
+                            <button type="submit" class="btn btn-success">Downloard</button>
+                            </form>
                             </div>
+                            <br>
+
                             <!-- /.box-header -->
                             <div class="box-body table-responsive no-padding">
                                 <table class="table table-hover">
                                     <tbody>
                                     <tr>
-                                        <th>ID</th>
-                                        <th>User</th>
-                                        <th>Date</th>
-                                        <th>Status</th>
-                                        <th>Reason</th>
+                                        <th>No</th>
+                                        <th>Nama</th>
+                                        <th>Email</th>
+                                        <th>No Hp</th>
+                                        <th>Tanggal Hadir</th>
+                                        <th>Alamat</th>
                                     </tr>
+                                    <?php $i=1; foreach ($presence as $presence) {?>
                                     <tr>
-                                        <td>183</td>
-                                        <td>John Doe</td>
-                                        <td>11-7-2014</td>
-                                        <td><span class="badge text-white badge text-white-pill badge text-white-success">Approved</span>
-                                        </td>
-                                        <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                                        <td><?= $i;?></td>
+                                        <td><?= $presence['name'];?></td>
+                                        <td><?= $presence['email'];?></td>
+                                        <td><?= $presence['phone'];?></td>
+                                        <td><?= $presence['absensi'];?></td>
+                                        <td><?= $presence['address'];?></td>
                                     </tr>
-                                    <tr>
-                                        <td>219</td>
-                                        <td>Alexander Pierce</td>
-                                        <td>11-7-2014</td>
-                                        <td><span class="badge text-white badge text-white-pill badge text-white-warning">Pending</span>
-                                        </td>
-                                        <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                                    </tr>
-                                    <tr>
-                                        <td>657</td>
-                                        <td>Bob Doe</td>
-                                        <td>11-7-2014</td>
-                                        <td><span class="badge text-white badge text-white-pill badge text-white-primary">Approved</span>
-                                        </td>
-                                        <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                                    </tr>
-                                    <tr>
-                                        <td>175</td>
-                                        <td>Mike Doe</td>
-                                        <td>11-7-2014</td>
-                                        <td><span class="badge text-white badge text-white-pill badge text-white-danger">Denied</span>
-                                        </td>
-                                        <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                                    </tr>
+                                    <?php $i++;}?>
                                     </tbody>
                                 </table>
                             </div>
