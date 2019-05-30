@@ -99,8 +99,8 @@ $images = $this->config->item('images');
                                 </li>
                                 <li><a href="<?php echo site_url('administrator');?>"><i class="icon icon-circle-o"></i>Semua Administrator</a>
                                 </li>
-                                <li><a href="<?php echo site_url('user/add');?>"><i class="icon icon-add"></i>Daftar User</a>
-                                </li>
+                               <?php /*<li><a href="<?php echo site_url('user/add');?>"><i class="icon icon-add"></i>Daftar User</a>
+                                </li>*/ ?>
                                 <li><a href="<?php echo site_url('administrator/add');?>"><i class="icon icon-add"></i>Daftar Administrator</a>
                                 </li>
                             </ul>
