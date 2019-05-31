@@ -24,6 +24,18 @@ class Model_t_admin extends CI_Model
 		return $this->db->get('present')->result_array();
 	}
 
+	function filteruser($start, $end, $id)
+	{
+		$this->db->select('present.created_at as absensi, user.name, user.email, user.address, user.phone, present.user_id, user.id');
+		$this->db->join('user','present.user_id = user.id');
+		$this->db->where('present.created_at >=',$start.' 00:00:00');
+		$this->db->where('present.created_at <=',$end.' 23:59:59');
+		//$this->db->group_by('present.user_id');
+		$this->db->where('present.user_id', $id);
+		$this->db->order_by('present.created_at','desc');
+		return $this->db->get('present')->result_array();
+	}
+
 	function filterstart($start)
 	{
 		$this->db->join('user','present.user_id = user.id');

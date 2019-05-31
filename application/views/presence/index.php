@@ -4,6 +4,11 @@
             <div class="tab-pane animated fadeInUpShort show active" id="v-pills-all" role="tabpanel" aria-labelledby="v-pills-all-tab">
                 <div class="row my-3">
                     <div class="col-md-12">
+                    <form action="<?=site_url('report');?>" method="post">
+                    <div><a href="<?= site_url('report/download/'.date('Y-m').'-01').'/'.date('Y-m-t');?>" target="_blank"><button type="button" class="btn btn-primary">Download PDF</button></a></div>
+                    
+                    </form>
+                    <br>
                         <div class="card r-0 shadow">
                             <div class="table-responsive">
                                 <form>
@@ -12,7 +17,6 @@
                                         <tr class="no-b">
                                             <th>NO</th>
                                             <th>NAMA</th>
-
                                             <th> <div class="d-none d-lg-block">EMAIL</div></th>
                                             <th> <div class="d-none d-lg-block">NO HP</div></th>
                                             <th> <div class="d-none d-lg-block">ALAMAT</div></th>
@@ -84,6 +88,7 @@
                                 '<td>'+ getdata[i].updated_at+'</td>' +
                                 '<td>User</td>' +
                                 '<td>'+'<a href="<?php echo site_url('user/delete/');?>'+getdata[i].id+'"><button type="button" class="btn btn-danger">Delete</button></a><br>'+
+                                '<a href="<?php echo site_url('report/user/'.date('Y-m'));?>-01/<?php echo date('Y-m-t');?>/'+getdata[i].id+'" target="_blank"><button type="button" class="btn btn-primary" style="margin-top:1%">Report</button></a><br>'+
                                 '<a href="<?php echo site_url('user/detail/');?>'+getdata[i].id+'"><button type="button" class="btn btn-success" style="margin-top:1%">Detail</button></a></td>' +
                                 '</tr>';
                 }
@@ -91,5 +96,6 @@
             }
         });
     }
+    
 
 </script>

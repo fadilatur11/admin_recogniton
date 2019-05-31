@@ -26,6 +26,20 @@ class Report extends CI_Controller
 		$this->load->view('pdf/index', $data);
 	}
 
+	function download($start_date, $end_date)
+	{
+		$data['page'] = "PDF";
+		$data['presence'] = $this->Model_t_admin->filter($start_date, $end_date);
+		$this->load->view('pdf/index', $data);
+	}
+
+	function user($start_date, $end_date,$id)
+	{
+		$data['page'] = "PDF";
+		$data['presence'] = $this->Model_t_admin->filteruser($start_date, $end_date,$id);
+		$this->load->view('pdf/index', $data);
+	}
+
 	function lagi()
 	{
 		$data['page'] = "Download PDF";

@@ -17,7 +17,7 @@ $images = $this->config->item('images');
     <link rel="stylesheet" href="<?=$css;?>app.css">
 
 </head>
-<body class="light sidebar-mini sidebar-collapse">
+<body class="light sidebar-mini sidebar-collapse" onload="window.print()">
 <!-- Pre loader -->
 <div id="loader" class="loader">
     <div class="plane-container">
@@ -104,12 +104,13 @@ $images = $this->config->item('images');
                         <div class="box">
                             <div class="box-header">
                                 <h3 class="box-title">Report Daftar Hadir</h3>
+                                <span><b><?= date('Y-m');?>-01 s/d <?= date('Y-m-t');?></b></span>
                                 <div class="box-tools">
                                    
                                 </div>
                             </div><br>
                             <div class="col-12">
-                            <form action="<?= site_url('pdf');?>" method="POST">
+                            <?php /*<form action="<?= site_url('pdf');?>" method="POST">
                             <input type="date" name="start_date">
                             <input type="date" name="end_date">
                             <button type="submit" class="btn btn-default">Filter</button>
@@ -120,7 +121,7 @@ $images = $this->config->item('images');
                             <button type="submit" class="btn btn-success">Downloard</button>
                             </form>
                             </div>
-                            <br>
+                            <br>*/ ?>
 
                             <!-- /.box-header -->
                             <div class="box-body table-responsive no-padding">
