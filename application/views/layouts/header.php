@@ -4,6 +4,11 @@ $js = $this->config->item('js');
 $tim = $this->config->item('images_tim');
 $images = $this->config->item('images');
 $face = $this->config->item('get_face');
+
+$upload = $this->config->item('upload');
+$sample = $this->config->item('sample');
+$show   = $this->config->item('show');
+
 ?>
 <!DOCTYPE html>
 <html lang="zxx">

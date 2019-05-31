@@ -77,6 +77,13 @@
                     }else{
                         var status = '<div class="d-none d-lg-block"><span class="icon icon-circle s-12  mr-2 text-success"></span> Online</div>';
                     }
+                    
+                    var checkout;
+                    if(getdata[i].created_at == getdata[i].updated_at) {
+                        checkout = "-";
+                    } else {
+                        checkout = getdata[i].updated_at
+                    }
                     baris += '<tr>'+
                                 '<td>'+ u + '</td>'+
                                 '<td>'+ getdata[i].name +'</td>' +
@@ -85,11 +92,11 @@
                                 '<td>'+ getdata[i].address +'</td>' +
                                 '<td>'+ status +'</td>' +
                                 '<td>'+ getdata[i].created_at+'</td>' +
-                                '<td>'+ getdata[i].updated_at+'</td>' +
+                                '<td>'+ checkout +'</td>' +
                                 '<td>User</td>' +
-                                '<td>'+'<a href="<?php echo site_url('user/delete/');?>'+getdata[i].id+'"><button type="button" class="btn btn-danger">Delete</button></a><br>'+
-                                '<a href="<?php echo site_url('report/user/'.date('Y-m'));?>-01/<?php echo date('Y-m-t');?>/'+getdata[i].id+'" target="_blank"><button type="button" class="btn btn-primary" style="margin-top:1%">Report</button></a><br>'+
-                                '<a href="<?php echo site_url('user/detail/');?>'+getdata[i].id+'"><button type="button" class="btn btn-success" style="margin-top:1%">Detail</button></a></td>' +
+                                '<td>'+'<a href="<?php echo site_url('report/user/'.date('Y-m'));?>-01/<?php echo date('Y-m-t');?>/'+getdata[i].id+'" target="_blank"><button type="button" class="btn btn-primary" style="margin-top:1%">Report</button></a><br>'+
+                                '<a href="<?php echo site_url('presence/detail/');?>'+getdata[i].id+'"><button type="button" class="btn btn-success" style="margin-top:1%">Detail</button></a></td>' +
+
                                 '</tr>';
                 }
                 $('#target').html(baris);

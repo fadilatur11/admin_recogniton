@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$baseUrl = ( isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') ? 'https://' : 'http://';
+$baseUrl = ( isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') ? 'http://' : 'http://';
 $baseUrl .= isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : getenv('HTTP_HOST');
 $baseUrl .= str_replace('\\','/', dirname( isset($_SERVER['SCRIPT_NAME']) ? $_SERVER['SCRIPT_NAME'] : getenv('SCRIPT_NAME'))). '/';
 $config['base_url'] = $baseUrl;
@@ -31,8 +31,15 @@ $config['css'] 				= $config['base_url']."assets/css/";
 $config['js'] 			= $config['base_url']."assets/js/";
 $config['images'] 			= $config['base_url']."assets/img/";
 $config['images_tim'] 		= $config['base_url']."timthumb.php?src=";
-$config['save_face'] = $_SERVER['DOCUMENT_ROOT'].'/upload/face/';
-$config['get_face'] = 'http://localhost/upload/face/';
+// $config['save_face'] = $_SERVER['DOCUMENT_ROOT'].'/upload/face/';
+// $config['get_face'] = 'http://localhost/upload/face/';
+$config['save_face'] = '/home/Workspace/Web/dns/upload/face/';
+$config['get_face'] = 'http://117.53.47.77/dns/upload/face/';
+
+// FaceAPI Config
+$config['upload']   =   'http://localhost:3000/static/upload/';
+$config['sample']   =   'http://localhost:3000/static/sample_image/';
+$config['show']   =   'http://localhost:3000/static/show/';
 
 
 /*

@@ -132,7 +132,7 @@ class User extends CI_Controller
                                         <div class="">
 
                                             <div class="image mr-3  float-left">
-                                                <img class="w-40px" src="http://localhost/admin_recogniton/assets/img/dummy/u1.png" alt="User Image">
+                                                <img class="w-40px" src="'.$this->config->item('sample').$row->image.'" alt="User Image">
                                             </div>
                                             <div>
                                                 <div>
