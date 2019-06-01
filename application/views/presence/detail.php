@@ -37,9 +37,9 @@
                                 <div class="col-md-3">
                                     <div class="card" style="height: 100%">
                                         <ul class="list-group list-group-flush">
-                                            <li class="list-group-item"><i class="icon icon-mobile text-primary"></i><strong class="s-12">Phone</strong> <span class="float-right s-12"><?=$getdata['phone'];?></span></li>
+                                            <li class="list-group-item"><i class="icon icon-mobile text-primary"></i><strong class="s-12">Telepon</strong> <span class="float-right s-12"><?=$getdata['phone'];?></span></li>
                                             <li class="list-group-item"><i class="icon icon-mail text-success"></i><strong class="s-12">Email</strong> <span class="float-right s-12"><?=$getdata['email'];?></span></li>
-                                            <li class="list-group-item"><i class="icon icon-address-card-o text-warning"></i><strong class="s-12">Address</strong> <span class="float-right s-12"><?=$getdata['address'];?></span></li>
+                                            <li class="list-group-item"><i class="icon icon-address-card-o text-warning"></i><strong class="s-12">Alamat</strong> <span class="float-right s-12"><?=$getdata['address'];?></span></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -57,10 +57,10 @@
                                             <div class="col-md-4" id="box-info" style="display:none">
                                                 <label for=""><h4>INFO</h4></label>
                                                 <ul class="list-group list-group-flush">
-                                                    <li class="list-group-item"></i><strong class="s-12">SIMILIARITY</strong> <span class="float-right s-12"><?=$getdata['similiar'];?>%</span></li>
+                                                    <li class="list-group-item"></i><strong class="s-12">KEMIRIPAN</strong> <span class="float-right s-12"><?=$getdata['similiar'];?>%</span></li>
                                                     <li class="list-group-item"></i><strong class="s-12">LATITUDE</strong> <span class="float-right s-12"><?=$getdata['latitude'];?></span></li>
                                                     <li class="list-group-item"></i><strong class="s-12">LONGITUDE</strong> <span class="float-right s-12"><?=$getdata['longitude'];?></span></li>
-                                                    <li class="list-group-item"></i><strong class="s-12">PRESENT AT</strong> <span class="float-right s-12"><?=$getdata['created_at'];?></span></li>
+                                                    <li class="list-group-item"></i><strong class="s-12">KEHADIRAN</strong> <span class="float-right s-12"><?=$getdata['created_at'];?></span></li>
                                                 </ul>
                                             </div>
                                         </div>
