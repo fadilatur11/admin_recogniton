@@ -23,8 +23,8 @@
                                             <th> <div class="d-none d-lg-block">STATUS</div></th>
                                             <th> <div class="d-none d-lg-block">CHECK IN</div></th>
                                             <th> <div class="d-none d-lg-block">CHECK OUT</div></th>
-                                            <th> <div class="d-none d-lg-block">ROLE</div></th>
-                                            <th><div class="d-none d-lg-block">OPTION</div></th>
+                                            <th> <div class="d-none d-lg-block">JABATAN</div></th>
+                                            <th><div class="d-none d-lg-block">OPSI</div></th>
                                         </tr>
                                         </thead>
 
@@ -42,8 +42,8 @@
         </div>
     </div>
     <!--Add New Message Fab Button-->
-    <a href="<?php echo site_url('user/add');?>" class="btn-fab btn-fab-md fab-right fab-right-bottom-fixed shadow btn-primary"><i
-            class="icon-add"></i></a>
+    <!-- <a href="<?php /*echo site_url('user/add');*/?>" class="btn-fab btn-fab-md fab-right fab-right-bottom-fixed shadow btn-primary"><i
+            class="icon-add"></i></a> -->
 </div>
 
 <!-- Add the sidebar's background. This div must be placed
@@ -94,7 +94,7 @@
                                 '<td>'+ getdata[i].created_at+'</td>' +
                                 '<td>'+ checkout +'</td>' +
                                 '<td>User</td>' +
-                                '<td>'+'<a href="<?php echo site_url('report/user/'.date('Y-m'));?>-01/<?php echo date('Y-m-t');?>/'+getdata[i].id+'" target="_blank"><button type="button" class="btn btn-primary" style="margin-top:1%">Report</button></a><br>'+
+                                '<td>'+'<a href="<?php echo site_url('report/user/'.date('Y-m'));?>-01/<?php echo date('Y-m-t');?>/'+getdata[i].user_id+'" target="_blank"><button type="button" class="btn btn-primary" style="margin-top:1%">Laporan Hadir</button></a><br>'+
                                 '<a href="<?php echo site_url('presence/detail/');?>'+getdata[i].id+'"><button type="button" class="btn btn-success" style="margin-top:1%">Detail</button></a></td>' +
 
                                 '</tr>';

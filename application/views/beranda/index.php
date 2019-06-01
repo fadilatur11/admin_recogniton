@@ -17,8 +17,8 @@
                                             <th> <div class="d-none d-lg-block">NO HP</div></th>
                                             <th> <div class="d-none d-lg-block">ALAMAT</div></th>
                                             <th> <div class="d-none d-lg-block">STATUS</div></th>
-                                            <th> <div class="d-none d-lg-block">ROLE</div></th>
-                                            <th><div class="d-none d-lg-block">OPTION</div></th>
+                                            <th> <div class="d-none d-lg-block">JABATAN</div></th>
+                                            <th><div class="d-none d-lg-block">OPSI</div></th>
                                         </tr>
                                         </thead>
 
@@ -79,7 +79,7 @@
                                 '<td>'+ getdata[i].address +'</td>' +
                                 '<td>'+ status +'</td>' +
                                 '<td>User</td>' +
-                                '<td>'+'<a href="<?php echo site_url('user/delete/');?>'+getdata[i].id+'"><button type="button" class="btn btn-danger">Delete</button></a><br>'+
+                                '<td>'+'<a href="<?php echo site_url('user/delete/');?>'+getdata[i].id+'"><button type="button" class="btn btn-danger">Hapus</button></a><br>'+
                                 '<a href="<?php echo site_url('user/detail/');?>'+getdata[i].id+'"><button type="button" class="btn btn-success" style="margin-top:1%">Detail</button></a></td>' +
                                 '</tr>';
                 }

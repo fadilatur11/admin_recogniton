@@ -6,7 +6,7 @@ class Model_present extends CI_Model {
         $this->db->select('
 			user.name, user.email, user.phone, user.address, user.image, user.sample_image,
 			user.status, present.id, present.image as present_image, present.latitude, present.longitude,
-			present.created_at, present.updated_at
+			present.created_at, present.updated_at,present.user_id
 		');
 		$this->db->join('user','present.user_id = user.id');
 		$this->db->order_by('present.created_at', 'DESC');

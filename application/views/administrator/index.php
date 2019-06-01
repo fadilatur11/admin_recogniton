@@ -17,8 +17,8 @@
                                             <th> <div class="d-none d-lg-block">NO HP</div></th>
                                             <th> <div class="d-none d-lg-block">ALAMAT</div></th>
                                             <th> <div class="d-none d-lg-block">STATUS</div></th>
-                                            <th> <div class="d-none d-lg-block">ROLE</div></th>
-                                            <th><div class="d-none d-lg-block">OPTION</div></th>
+                                            <th> <div class="d-none d-lg-block">JABATAN</div></th>
+                                            <th><div class="d-none d-lg-block">OPSI</div></th>
                                         </tr>
                                         </thead>
 
@@ -74,6 +74,7 @@
                     baris += '<tr>'+
                                 '<td>'+ u + '</td>'+
                                 '<td><img src="<?=$tim.$face;?>'+getdata[i].photo+'" style="border-radius: 100%;"></td>'+
+                                '<td></td>' +
                                 '<td>'+ getdata[i].name +'</td>' +
                                 '<td>'+ getdata[i].email +'</td>' +
                                 '<td>'+ getdata[i].telepon +'</td>' +
@@ -81,7 +82,7 @@
                                 '<td>'+ status +'</td>' +
                                 '<td>Administrator</td>' +
                                 '<td>'+'<a href="<?php echo site_url('administrator/delete/');?>'+getdata[i].id+'"><button type="button" class="btn btn-danger">Delete</button></a><br>'+
-                                '<a href="<?php echo site_url('administrator/edit/');?>'+getdata[i].id+'"><button type="button" class="btn btn-secondary" style="margin-top:1%">Edit</button></a><br>'+
+                                '<a href="<?php echo site_url('administrator/edit/');?>'+getdata[i].id+'"><button type="button" class="btn btn-secondary" style="margin-top:1%">Edit</button></a><br></td>'+
                                 '</tr>';
                 }
                 $('#target').html(baris);
